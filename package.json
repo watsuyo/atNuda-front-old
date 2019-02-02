@@ -8,12 +8,16 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "buid-storybook": "build-storybook -s public"
   },
   "dependencies": {
+    "@nuxtjs/bulma": "^1.2.1",
+    "@storybook/vue": "^4.1.11",
+    "babel-preset-vue": "^2.0.2",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.3.4",
-    "@nuxtjs/bulma": "^1.2.1"
+    "nuxt": "^2.3.4"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"

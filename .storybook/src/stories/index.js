@@ -1,2 +1,2 @@
 import './hoge'
-import "./fuga"
+import "./profile"

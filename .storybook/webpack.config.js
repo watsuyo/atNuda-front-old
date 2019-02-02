@@ -1,25 +1,41 @@
 const path = require('path')
+const rootPath = path.resolve(__dirname, '../')
 
 module.exports = {
   module: {
     rules: [
       {
-        test: /\.styl$/,
-        loaders: ["style-loader", "css-loader", "stylus-loader",{
-          loader: 'vuetify-loader',
-          options: {
-            theme: path.resolve(__dirname, '../src/stylus/')
-          }
-        }],
-        include: path.resolve(__dirname, '../src')
+        test: /\.css?$/,
+        loaders: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      // Nuxtのデフォルトアセットローダー
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 1000, // 1kB
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 1000, // 1kB
+          name: 'fonts/[name].[hash:7].[ext]'
+        }
       }
-    ]
+    ],
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      vue: 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, '../src/')
+      '@': rootPath,
+      '~': rootPath
     }
   }
 }

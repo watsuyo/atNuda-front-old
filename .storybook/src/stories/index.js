@@ -1,0 +1,2 @@
+import './hoge'
+import "./fuga"

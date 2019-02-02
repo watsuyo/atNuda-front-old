@@ -5,3 +5,5 @@ const loadStories = () => {
 }
 
 configure(loadStories, module)
+
+// 基本いじらない

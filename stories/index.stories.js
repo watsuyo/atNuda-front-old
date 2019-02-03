@@ -33,4 +33,5 @@ storiesOf('Button', module)
     methods: { action: action('clicked') },
   }));
 
+
 /* eslint-enable react/react-in-jsx-scope */

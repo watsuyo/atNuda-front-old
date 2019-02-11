@@ -1,10 +1,10 @@
 import { storiesOf } from '@storybook/vue'
-import Hoge from '~/components/Hoge.vue'
+import Header from '~/components/Header.vue'
 
-storiesOf('Hoge', module)
-  .add('abe', () => ({
-    components: { Hoge },
+storiesOf('Header', module)
+  .add('header', () => ({
+    components: { Header },
     render(h) {
-      return <Hoge />
+      return <Header />
     }
   }))

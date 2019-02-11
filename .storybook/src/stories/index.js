@@ -1,2 +1,1 @@
 import './hoge'
-import "./fuga"

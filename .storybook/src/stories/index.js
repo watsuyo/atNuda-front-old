@@ -1,1 +1,2 @@
-import './hoge'
+import './header'
+import './footer'

@@ -61,34 +61,33 @@ export default {
 
 <style lang="scss">
   @import "../node_modules/bulma/bulma.sass";
-    body {
-      width: 100%;
-      text-align: center;
-    }
-    #app {
-      width: 80%;
-      display: inline-block;
-    }
-    #header {
-      display: inline-block; 
-    }
-    .subtitle {
-      padding-left: 30px;
-    }
-    .navbar-menu {
-      padding-left: 5%;
-    }
-    .icons {
-      display: inline-block;
-    }
-    .fa-address-card {
-      padding-right: 10%;
-    }
-    .fa-user-circle {
-      padding-left: 10%;
-    }
-    .newPost {
-      padding-left: 10%;
-    }
-
+  body {
+    width: 100%;
+    text-align: center;
+  }
+  #app {
+    width: 80%;
+    display: inline-block;
+  }
+  #header {
+    display: inline-block; 
+  }
+  .subtitle {
+    padding-left: 30px;
+  }
+  .navbar-menu {
+    padding-left: 5%;
+  }
+  .icons {
+    display: inline-block;
+  }
+  .fa-address-card {
+    padding-right: 5%;
+  }
+  .fa-user-circle {
+    padding-left: 5%;
+  }
+  .newPost {
+    padding-left: 5%;
+  }
 </style>

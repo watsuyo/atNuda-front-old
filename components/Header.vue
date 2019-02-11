@@ -21,10 +21,21 @@
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-end">
             <div class="navbar-item">
-              <div class="buttons">
+              <div v-if="isLogin" class="icons">
                 <a class="button is-medium is-size-5">
                   <i class="fas fa-address-card"></i>
                   <strong class="newPost">新規投稿</strong>
+                </a>
+                <i class="fas fa-user-circle is-size-1"></i>
+              </div>
+              <div v-else class="icons">
+                <a class="button is-medium is-size-5">
+                  <i class="fas fa-address-card"></i>
+                  <strong class="newPost">投稿</strong>
+                </a>
+                <a class="button is-medium is-size-5">
+                  <i class="fas fa-sign-in-alt"></i>
+                  <strong class="newPost">登録・ログイン</strong>
                 </a>
                 <i class="fas fa-user-circle is-size-1"></i>
               </div>
@@ -56,19 +67,19 @@ export default {
     }
     #app {
       width: 80%;
-      display: inline-block !important;
+      display: inline-block;
     }
     #header {
       display: inline-block; 
     }
     .subtitle {
-      padding-left: 50px;
+      padding-left: 30px;
     }
     .navbar-menu {
       padding-left: 5%;
     }
-    .buttons {
-      display: inline-block !important;
+    .icons {
+      display: inline-block;
     }
     .fa-address-card {
       padding-right: 10%;

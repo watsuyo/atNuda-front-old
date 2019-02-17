@@ -86,60 +86,10 @@
         </div>
         <div class="columns has-background-white">
           <div class="column is-4 is-offset-1">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">John Smith</p>
-                    <p class="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
+            <portfolio-card v-bind:portfolio="portfolio"></portfolio-card>
           </div>
           <div class="column is-4 is-offset-2">
-            <div class="card">
-              <nav class="columns is-flex is-vcentered">
-                <div class="column is-5">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" width="48" height="48">
-                    <span class="u-valign-m">John Smith</span>
-                </div>
-                <div class="column">
-                  zaaa
-                </div>
-              </nav>
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-            </div>
+            <portfolio-card v-bind:portfolio="portfolio"></portfolio-card>
           </div>
         </div>
         <div class="columns has-background-white u-pt-20">
@@ -190,9 +140,28 @@
 </template>
 
 <script>
+import PortfolioCard from "../components/molecules/PortfolioCard"
 
 export default {
+  data () {
+    return {
+      portfolio:
+      {"uuid":"portxxxxx1",
+      "site_url":"https://site-example.com/1",
+      "image_urls":["https://example.com/1","https://example.com/2","https://example.com/3"],
+      "portfolio_comment":"俺の渾身のポートフォリオサイト、みんな見てくれよな！",
+      "comments":[{"myself":true,"comment":"私のコメント"},{"myself":false,"comment":"誰かのコメント"}],
+      "corrections":[{"myself":true,"correction":"添削への返信"},{"myself":false,"correction":"誰かの添削コメント"}],
+      "user":
+        {"name":"john",
+        "position":["フロントエンド","バックエンド","デザイナー"],
+        "status":"戦闘中",
+        "user_small_images_url":"https://user-small1.com/"}
+      }
+    }
+  },
   components: {
+    "portfolio-card": PortfolioCard
   }
 }
 </script>

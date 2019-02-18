@@ -148,15 +148,16 @@ export default {
       portfolio:
       {"uuid":"portxxxxx1",
       "site_url":"https://site-example.com/1",
-      "image_urls":["https://example.com/1","https://example.com/2","https://example.com/3"],
+      "image_urls":["https://images.unsplash.com/photo-1475778057357-d35f37fa89dd","https://images.unsplash.com/photo-1475778057357-d35f37fa89dd","https://images.unsplash.com/photo-1475778057357-d35f37fa89dd"],
       "portfolio_comment":"俺の渾身のポートフォリオサイト、みんな見てくれよな！",
       "comments":[{"myself":true,"comment":"私のコメント"},{"myself":false,"comment":"誰かのコメント"}],
       "corrections":[{"myself":true,"correction":"添削への返信"},{"myself":false,"correction":"誰かの添削コメント"}],
+      "like":4,
       "user":
         {"name":"john",
         "position":["フロントエンド","バックエンド","デザイナー"],
         "status":"戦闘中",
-        "user_small_images_url":"https://user-small1.com/"}
+        "user_small_images_url":"https://bulma.io/images/placeholders/96x96.png"}
       }
     }
   },

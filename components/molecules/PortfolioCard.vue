@@ -37,7 +37,7 @@
     <nav class="navbar">
       <div class="navbar-start">
         <div class="navbar-item">
-          <a class="button is-primary"><i class="fas fa-comment has-text-white"></i>コメントを見る</a>
+          <a class="button is-primary" @click="showModal"><i class="fas fa-comment has-text-white"></i>コメントを見る</a>
         </div>
       </div>
       <div class="navbar-end">
@@ -54,18 +54,22 @@
         </div>
       </div>
     </nav>
+    <portfolio-detail-modal :isActive="modalActive" @set="closeModal"></portfolio-detail-modal>
   </div>
 </template>
 
 <script>
 import { Carousel, Slide } from 'vue-carousel';
+import PortfolioDetailModal from "~/components/organisms/PortfolioDetailModal"
 import HogeImage from '~/assets/England_Houses_Rivers_Bridges_Marinas_Evening_546553_1280x777.jpg';
 
 export default {
+
   name: 'PortfolioCard',
   data () {
     return {
-      img: HogeImage
+      img: HogeImage,
+      modalActive: false
     }
   },
   props: {
@@ -75,9 +79,18 @@ export default {
       default: {}
     }
   },
+  methods: {
+    showModal: function() {
+      this.modalActive = true
+    },
+    closeModal: function() {
+      this.modalActive = false
+    }
+  },
   components: {
     Carousel,
-    Slide
+    Slide,
+    "portfolio-detail-modal" :PortfolioDetailModal
   }
 }
 </script>

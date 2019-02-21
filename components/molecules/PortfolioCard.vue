@@ -54,7 +54,7 @@
         </div>
       </div>
     </nav>
-    <portfolio-detail-modal :isActive="modalActive" @set="closeModal"></portfolio-detail-modal>
+    <portfolio-detail-modal :isActive="modalActive" :portfolio="portfolio" @set="closeModal"></portfolio-detail-modal>
   </div>
 </template>
 

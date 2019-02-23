@@ -4,7 +4,7 @@
       <div class="navbar-start">
           <div class="media u-my-auto u-ml-5">
             <figure class="image is-48x48">
-              <img :src="portfolio.user.user_small_images_url">
+              <img class="is-rounded" :src="portfolio.user.user_small_images_url" width="48" height="48">
             </figure>
           </div>
         <div class="navbar-item">
@@ -26,23 +26,25 @@
       </div>
     </div>
     <div class="card-image">
-      <figure class="image is-4by3">
-        <a :href="portfolio.site_url">
-          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-        </a>
-      </figure>
+        <carousel :per-page="1" :adjustableHeight="true" :autoplay="true" :loop="true" :autoplayTimeout=5000>
+          <slide v-for="(image_url, index) in portfolio.image_urls" :key="index">
+            <a :href="portfolio.site_url">
+              <img :src="image_url" alt="Placeholder image">
+            </a>
+          </slide>
+        </carousel>
     </div>
     <nav class="navbar">
       <div class="navbar-start">
         <div class="navbar-item">
-          <a class="button is-primary"><i class="fas fa-comment has-text-white"></i>コメントを見る</a>
+          <a class="button is-primary" @click="showModal"><i class="fas fa-comment has-text-white"></i>コメントを見る</a>
         </div>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
           <a>
             <i class="fa fa-heart has-text-primary"></i>
-            <span>5</span>
+            <span>{{portfolio.like}}</span>
           </a>
         </div>
         <div class="navbar-item">
@@ -52,18 +54,43 @@
         </div>
       </div>
     </nav>
+    <portfolio-detail-modal :isActive="modalActive" :portfolio="portfolio" @set="closeModal"></portfolio-detail-modal>
   </div>
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+import PortfolioDetailModal from "~/components/organisms/PortfolioDetailModal"
+import HogeImage from '~/assets/England_Houses_Rivers_Bridges_Marinas_Evening_546553_1280x777.jpg';
+
 export default {
+
   name: 'PortfolioCard',
+  data () {
+    return {
+      img: HogeImage,
+      modalActive: false
+    }
+  },
   props: {
     portfolio: {
       type: Object,
       required: true,
       default: {}
     }
+  },
+  methods: {
+    showModal: function() {
+      this.modalActive = true
+    },
+    closeModal: function() {
+      this.modalActive = false
+    }
+  },
+  components: {
+    Carousel,
+    Slide,
+    "portfolio-detail-modal" :PortfolioDetailModal
   }
 }
 </script>

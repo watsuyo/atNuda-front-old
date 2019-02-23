@@ -38,52 +38,18 @@
       </nav>
     </header>
     <main>
-      <section>
-        <div class="columns mt-50">
-          <div class="column is-10 is-offset-1">
-            <div class="lavel">
-              <div class="level-left">
-                <div class="level-item is-3">
-                  <div class="control has-icons-left">
-                    <div class="select">
-                      <select>
-                        <option selected>ポジション</option>
-                      </select>
-                    </div>
-                    <span class="icon is-left">
-                      <i class="fas fa-globe"></i>
-                    </span>
-                  </div>
-                </div>
-                <div class="level-item is-3">
-                  <div class="control has-icons-left">
-                    <div class="select">
-                      <select>
-                        <option selected>ステータス</option>
-                      </select>
-                    </div>
-                    <span class="icon is-left">
-                      <i class="fas fa-globe"></i>
-                    </span>
-                  </div>
-                </div>
-                <div>のポートフォリオ</div>
-              </div>
-            </div>
+      <section class="section">
+        <portfolio-search-box></portfolio-search-box>
+      </section>
+      <section class="section">
+        <div class="column">
+          <div class="buttons is-centered">
+            <a class="button">新着順</a>
+            <a class="button">人気順</a>
           </div>
         </div>
       </section>
-      <section class="section is-medium has-background-warning mt-50">
-        <div class="columns has-background-white">
-          <div class="column is-5"></div>
-          <div class="column">
-            <div class="buttons is-centered">
-              <a class="button">新着順</a>
-              <a class="button">人気順</a>
-            </div>
-          </div>
-          <div class="column is-5"></div>
-        </div>
+      <section class="section">
         <div class="columns has-background-white">
           <div class="column is-4 is-offset-1">
             <portfolio-card v-bind:portfolio="portfolio"></portfolio-card>
@@ -141,6 +107,7 @@
 
 <script>
 import PortfolioCard from "../components/molecules/PortfolioCard"
+import PortfolioSearchBox from "../components/organisms/PortfolioSearchBox"
 
 export default {
   data () {
@@ -148,20 +115,22 @@ export default {
       portfolio:
       {"uuid":"portxxxxx1",
       "site_url":"https://site-example.com/1",
-      "image_urls":["https://example.com/1","https://example.com/2","https://example.com/3"],
+      "image_urls":["https://images.unsplash.com/photo-1475778057357-d35f37fa89dd","https://images.unsplash.com/photo-1475778057357-d35f37fa89dd","https://images.unsplash.com/photo-1475778057357-d35f37fa89dd"],
       "portfolio_comment":"俺の渾身のポートフォリオサイト、みんな見てくれよな！",
       "comments":[{"myself":true,"comment":"私のコメント"},{"myself":false,"comment":"誰かのコメント"}],
       "corrections":[{"myself":true,"correction":"添削への返信"},{"myself":false,"correction":"誰かの添削コメント"}],
+      "like":4,
       "user":
         {"name":"john",
         "position":["フロントエンド","バックエンド","デザイナー"],
         "status":"戦闘中",
-        "user_small_images_url":"https://user-small1.com/"}
+        "user_small_images_url":"https://bulma.io/images/placeholders/96x96.png"}
       }
     }
   },
   components: {
-    "portfolio-card": PortfolioCard
+    "portfolio-card": PortfolioCard,
+    "portfolio-search-box": PortfolioSearchBox
   }
 }
 </script>

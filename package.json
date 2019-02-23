@@ -8,32 +8,20 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "@storybook/vue": "^3.4.11",
-    "@storybook/addon-actions": "^3.4.11",
-    "@storybook/addon-links": "^3.4.11",
-    "@storybook/addons": "^3.4.11",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
-    "@nuxtjs/bulma": "^1.2.1",
-    "@storybook/vue": "^4.1.11",
     "babel-preset-vue": "^2.0.2",
-    "bulma": "^0.7.2",
     "cross-env": "^5.2.0",
     "node-sass": "^4.11.0",
     "nuxt": "^2.3.4",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "vue-carousel": "^0.17.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@fortawesome/fontawesome-free": "^5.7.1",
-    "@storybook/addon-actions": "^4.1.11",
-    "@storybook/addon-links": "^4.1.11",
-    "@storybook/addons": "^4.1.11",
-    "@storybook/vue": "^4.1.11",
     "babel-loader": "^8.0.5",
     "nodemon": "^1.18.9"
   }

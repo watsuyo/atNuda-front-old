@@ -28,7 +28,15 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    "bulma"
+
+    // node.js module but we specify the pre-processor
+    { src: 'bulma/bulma.sass', lang: 'sass' },
+    '@fortawesome/fontawesome-free-webfonts',
+    '@fortawesome/fontawesome-free-webfonts/css/fa-brands.css',
+    '@fortawesome/fontawesome-free-webfonts/css/fa-regular.css',
+    '@fortawesome/fontawesome-free-webfonts/css/fa-solid.css',
+    '@/assets/css/base.css',
+
   ],
 
   /*
@@ -43,6 +51,7 @@ module.exports = {
   modules: [,
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma'
+    ['nuxt-sass-resources-loader', './assets/main.scss']
   ],
 
   /*
@@ -60,7 +69,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }

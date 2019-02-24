@@ -28,6 +28,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+
     // node.js module but we specify the pre-processor
     { src: 'bulma/bulma.sass', lang: 'sass' },
     '@fortawesome/fontawesome-free-webfonts',
@@ -35,6 +36,7 @@ module.exports = {
     '@fortawesome/fontawesome-free-webfonts/css/fa-regular.css',
     '@fortawesome/fontawesome-free-webfonts/css/fa-solid.css',
     '@/assets/css/base.css',
+
   ],
 
   /*
